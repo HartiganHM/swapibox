@@ -8,3 +8,5 @@ const DataBox = () => {
         </div>
     )
 }
+
+export default DataBox;
