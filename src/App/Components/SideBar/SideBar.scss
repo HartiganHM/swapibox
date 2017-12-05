@@ -1,10 +1,13 @@
 @import '../../../variables.scss';
 
 .SideBar {
-    background-color: $background-dark;
-    color: $white;
+    background: url('../../../Images/stars-2.jpg');
+    background-size: contain;
+    color: $accent-color;
     flex: 1;
-    font-family: $accent-font;
-    height: inherit;
+    font: {
+        family: $accent-font;
+        size: 2rem;
+    }
     padding:$padding-standard;
 }
