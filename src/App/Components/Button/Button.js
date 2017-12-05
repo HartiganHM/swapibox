@@ -1,9 +1,9 @@
 import React from 'react';
 import './Button.css';
 
-const Button = () => {
+const Button = ({ value }) => {
     return(
-        <button>Me button</button>
+        <button>{ value } <span>{ value === 'View Favorites' ? 0 : '' }</span></button>
     )
 }
 
