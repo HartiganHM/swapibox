@@ -2,5 +2,8 @@
 
 .App {
   display: flex;
-  font-family: $main-font;
+  font: {
+    family: $main-font;
+    size: 1.6rem;
+  }
 }
