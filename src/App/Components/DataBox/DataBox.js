@@ -4,7 +4,13 @@ import './DataBox.css';
 const DataBox = () => {
     return(
         <div>
-            I am duh DataBox!
+            <header>Me some header<Button /></header>
+            <div>
+                <Button />
+                <Button />
+                <Button />
+            </div>
+            <CardContainer />
         </div>
     )
 }
