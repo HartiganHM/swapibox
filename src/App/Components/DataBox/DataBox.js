@@ -6,7 +6,7 @@ import './DataBox.css';
 const DataBox = () => {
     return(
         <div>
-            <header>Me some header<Button value='View Favorites' /></header>
+            <header>ST4R W4RS 4PI<Button value='View Favorites' /></header>
             <div>
                 <Button
                     value='People' />

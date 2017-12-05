@@ -4,7 +4,7 @@ import './CardContainer.css';
 const CardContainer = () => {
     return(
         <div>
-            Uh big ol' Card Box!
+            Select a Category
         </div>
     )
 }
