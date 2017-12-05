@@ -1,0 +1,26 @@
+@import '../../../variables.scss';
+
+.DataBox {
+    align-items: stretch;
+    background-color: $background-light;
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    height: inherit;
+    padding: $padding-standard;
+
+    .header {
+        align-items: center;
+        border-bottom: $border-bottom;
+        display: flex;
+        font-size: 4.8rem;
+        justify-content: space-around;
+        padding: $padding-standard;
+    }
+
+    .button-box {
+        display: flex;
+        justify-content: space-around;
+        padding:$padding-standard;
+    }
+}

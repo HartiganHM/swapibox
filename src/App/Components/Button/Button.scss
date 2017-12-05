@@ -1,0 +1,26 @@
+@import '../../../variables.scss';
+
+.button {
+    border: none;
+    padding: $padding-small;
+}
+
+.category {
+    background-color: $button-category;
+    border-radius: 0.3rem;
+    color: $white;
+    width: 15rem;
+}
+
+.favorites {
+    background-color: $white;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+
+    .counter {
+        background-color: $background-dark;
+        color: $white;
+        padding: 0.5rem;
+    }
+}

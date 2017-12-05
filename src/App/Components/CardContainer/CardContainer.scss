@@ -1,0 +1,15 @@
+@import '../../../variables.scss';
+
+.card-container {
+    background-color: $background-dark;
+    color: $background-light;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    text-align: center;
+
+    .placeholder {
+        align-self: center;
+        font-size: 3.2rem;
+    }
+}

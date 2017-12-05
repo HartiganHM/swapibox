@@ -3,8 +3,8 @@ import './CardContainer.css';
 
 const CardContainer = () => {
     return(
-        <div>
-            Select a Category
+        <div className='card-container'>
+            <span className='placeholder'>Select a Category</span>
         </div>
     )
 }
