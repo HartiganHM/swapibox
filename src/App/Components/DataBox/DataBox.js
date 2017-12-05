@@ -6,12 +6,12 @@ import './DataBox.css';
 const DataBox = () => {
   return (
     <div className="DataBox">
-      <Button value="View Favorites" />
+      <Button type='favorites button' value="View Favorites" />
       <header className="header">SWAPI-Box</header>
       <div className="button-box">
-        <Button value="People" />
-        <Button value="Planets" />
-        <Button value="Vehicles" />
+        <Button type='category button' value="People" />
+        <Button type='category button' value="Planets" />
+        <Button type='category button' value="Vehicles" />
       </div>
       <CardContainer />
     </div>
