@@ -1,5 +1,9 @@
 @import '../../../variables.scss';
 
 .SideBar {
+    background-color: $background-dark;
+    color: $white;
     flex: 1;
+    font-family: $accent-font;
+    height: 100%;
 }

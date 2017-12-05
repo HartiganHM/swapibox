@@ -1,11 +1,19 @@
-html {
-  box-sizing: border-box;
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+html {
+  box-sizing: border-box;
   font: {
     family: sans-serif;
     size: 62.5%;
   }
+  height: 100%;
+}
+
+#root {
   height: 100%;
 }
 
