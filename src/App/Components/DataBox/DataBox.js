@@ -5,7 +5,7 @@ import './DataBox.css';
 
 const DataBox = () => {
     return(
-        <div>
+        <div className='DataBox'>
             <header>ST4R W4RS 4PI<Button value='View Favorites' /></header>
             <div>
                 <Button
