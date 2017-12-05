@@ -6,11 +6,14 @@ import './DataBox.css';
 const DataBox = () => {
     return(
         <div>
-            <header>Me some header<Button /></header>
+            <header>Me some header<Button value='View Favorites' /></header>
             <div>
-                <Button />
-                <Button />
-                <Button />
+                <Button
+                    value='People' />
+                <Button
+                    value='Planets' />
+                <Button
+                    value='Vehicles' />
             </div>
             <CardContainer />
         </div>
