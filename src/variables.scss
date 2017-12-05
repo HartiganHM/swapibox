@@ -5,26 +5,24 @@ $main-font: 'Open Sans', sans-serif;
 $accent-font: 'Raleway', sans-serif;
 
 //Colors
-$background-dark: rgb(29, 31, 37);
-$background-light: rgb(204, 213, 228);
-
 $accent-color: rgb(2, 159, 180);
 $accent-color-bright: rgb(0, 231, 216);
 $accent-color-hover: #045E55;
 
+$background-dark: rgb(29, 31, 37);
+$background-light: rgb(204, 213, 228);
+
+$button-category: rgb(66, 76, 92);
+
 $selected: rgba(0, 251, 255, 0.09);
 $background-color: #E5F3F2;
-$border-color: #D1D3D4;
-
-$high-score: rgb(0, 204, 68);
-$mid-high-score: rgb(226, 204, 0);
-$mid-low-score: rgb(223, 148, 0);
-$low-score: rgb(161, 0, 0);
+$border-color: rgb(95, 95, 95);
 
 $black: #000;
 $white: #FFF;
 
 //Bounding Box
-$border-bottom: 0.2rem solid $background-dark;
+$border-bottom: 0.1rem solid $border-color;
 
+$padding-small: 1rem;
 $padding-standard: 2rem;
