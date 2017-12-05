@@ -1,6 +1,7 @@
 @import '../../../variables.scss';
 
 .DataBox {
+    background-color: $background-light;
     flex: 3;
     height: inherit;
 }
