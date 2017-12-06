@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+
+.Card {
+    background-color: $white;
+    border: $border-card;
+    border-radius: 3rem 0 3rem 0;
+    color: $black;
+    margin: 1rem;
+    max-height: 30rem;
+
+    .card-header {
+        align-items: center;
+        display: flex;
+        border-bottom: 0.2rem groove $background-dark;
+        font-size: 1.8rem;
+        justify-content: space-around;
+
+        .card-title {
+            flex: 2;
+        }
+
+        .mark-favorite {
+            background-color: $white;
+            border: none;
+            border-left: 0.2rem groove $background-dark;
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card-data-set {
+            padding: $padding-small;
+        }
+    }
+}

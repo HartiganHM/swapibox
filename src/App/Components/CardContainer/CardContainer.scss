@@ -4,9 +4,16 @@
     background-color: $background-dark;
     color: $background-light;
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
+    padding: $padding-small;
+
+    &:after {
+        content: '';
+        flex: auto;
+    }
 
     .placeholder {
         align-self: center;
