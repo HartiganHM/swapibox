@@ -3,7 +3,7 @@ import './Button.css';
 
 const Button = ({ type, value }) => {
   return (
-    <button className={ type } onClick={ () => displayData(type) }>
+    <button className={ type } onClick={ () => displayData(value) }>
       {value}{' '}
       <span className="counter">{value === 'View Favorites' ? 0 : ''}</span>
     </button>
