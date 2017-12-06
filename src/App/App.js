@@ -4,10 +4,31 @@ import DataBox from './Components/DataBox/DataBox';
 import './App.css';
 
 class App extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      crawlData: {}
+    }
+  }
+
+  componentDidMount() {
+    //fetch the thing
+    //Json the data
+    //Send it to a cleaner
+    //Set state
+
+  }
+
+  cleanCrawlData() {
+    //Take in crawl data
+    //Sort out what's needed
+    //return new object
+  }
+
+  render( { crawl }) {
     return (
       <div className="App">
-        <Header />
+        <Header crawlData/>
         <DataBox />
       </div>
     );
