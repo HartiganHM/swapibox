@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   cleanCrawlData(data) {
-    //Take in crawl data
     return Object.assign(
       {},
       {
@@ -32,14 +31,12 @@ class App extends Component {
         openingCrawl: data.opening_crawl
       }
     );
-    //Sort out what's needed
-    //return new object
   }
 
-  render({ crawlData }) {
+  render() {
     return (
       <div className="App">
-        <Header crawlData={crawlData} />
+        <Header crawlData={this.state.crawlData} />
         <DataBox />
       </div>
     );
