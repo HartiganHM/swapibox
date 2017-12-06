@@ -11,21 +11,25 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const key = Math.floor(Math.random() * 7 + 1);
     //fetch the thing
+    const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
     //Json the data
+    const jsonData = await fetchedData.json();
+    const crawlData = cleanCrawlData(jsonData)
     //Send it to a cleaner
     //Set state
 
   }
 
-  cleanCrawlData() {
+  cleanCrawlData(data) {
     //Take in crawl data
     //Sort out what's needed
     //return new object
   }
 
-  render( { crawl }) {
+  render() {
     return (
       <div className="App">
         <Header crawlData/>
