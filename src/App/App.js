@@ -12,13 +12,18 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    const crawlData = this.fetchHomeworldSpeies;
+
+    this.setState({ crawlData });
+  }
+
+  fetchCrawlData () {
     const key = Math.floor(Math.random() * 7 + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
     const jsonData = await fetchedData.json();
-
     const crawlData = this.cleanCrawlData(jsonData);
 
-    this.setState({ crawlData });
+    return crawlData;
   }
 
   cleanCrawlData(data) {
@@ -34,17 +39,32 @@ class App extends Component {
 
   fetchPeople = async () => {
     const fetchedPeople = await fetch('https://swapi.co/api/people/');
-    const jsonData = fetchedPeople.json();
-    debugger;
+    const jsonData = await fetchedPeople.json();
     const peopleArray = this.fetchHomeworldSpeies(jsonData);
 
-    this.setState({ peopleArray });
+    return peopleArray;
   };
 
   fetchHomeworldSpeies(peopleData) {
     const unresolvedPromises = peopleData.map(async person => {
-      
+      let homeworldFetch = await fetch(person.homeworld);
+      let homeworldData = await homeworldFetch.json();
+
+      let speciesFetch = await fetch(person.species);
+      let speciesData = await speciesFetch.json();
+
+      return {
+        name: person.name,
+        data : {
+          homeworld: homeworldData.name,
+          species: speciesData.name,
+          language: speciesData.language,
+          population: homeworldData.population
+        }
+      }
     });
+
+    return Promise.all(unresolvedPromises);
   }
 
   render() {
@@ -52,7 +72,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox fetchPeople={this.fetchPeople} />
+          <DataBox />
         </div>
       );
     }
