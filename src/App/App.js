@@ -17,10 +17,8 @@ class App extends Component {
     const jsonData = await fetchedData.json();
 
     const crawlData = this.cleanCrawlData(jsonData);
-    
+
     this.setState({ crawlData });
-    //Send it to a cleaner
-    //Set state
   }
 
   cleanCrawlData(data) {
