@@ -40,7 +40,7 @@ class App extends Component {
   fetchPeople = async () => {
     const fetchedPeople = await fetch('https://swapi.co/api/people/');
     const jsonData = await fetchedPeople.json();
-    const peopleArray = this.fetchHomeworldSpeies(jsonData);
+    const peopleArray = this.fetchHomeworldSpeies(jsonData.results);
 
     return peopleArray;
   };
