@@ -17,6 +17,7 @@ class App extends Component {
     const jsonData = await fetchedData.json();
 
     const crawlData = this.cleanCrawlData(jsonData);
+    
     this.setState({ crawlData });
     //Send it to a cleaner
     //Set state
@@ -34,12 +35,15 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <Header crawlData={this.state.crawlData} />
-        <DataBox />
-      </div>
-    );
+    if (this.state.crawlData) {
+      return (
+        <div className="App">
+          <Header crawlData={this.state.crawlData} />
+          <DataBox />
+        </div>
+      );
+    }
+    return null;
   }
 }
 
