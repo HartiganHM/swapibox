@@ -7,17 +7,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      crawlData: {}
+      crawlData: {},
+      peopleData: []
     };
   }
 
   async componentDidMount() {
-    const crawlData = this.fetchHomeworldSpeies;
+    const crawlData = await this.fetchCrawlData();
+    const peopleData = await this.fetchPeople();
 
-    this.setState({ crawlData });
+    this.setState({ crawlData, peopleData });
   }
 
-  fetchCrawlData () {
+  async fetchCrawlData () {
     const key = Math.floor(Math.random() * 7 + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
     const jsonData = await fetchedData.json();
@@ -40,9 +42,9 @@ class App extends Component {
   fetchPeople = async () => {
     const fetchedPeople = await fetch('https://swapi.co/api/people/');
     const jsonData = await fetchedPeople.json();
-    const peopleArray = this.fetchHomeworldSpeies(jsonData.results);
+    const peopleData = this.fetchHomeworldSpeies(jsonData.results);
 
-    return peopleArray;
+    return peopleData;
   };
 
   fetchHomeworldSpeies(peopleData) {
