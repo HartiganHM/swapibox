@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|News+Cycle");
 .App {
   display: flex;
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
+  flex-direction: column;
   height: inherit; }
