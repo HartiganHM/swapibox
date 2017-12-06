@@ -8,7 +8,10 @@ class App extends Component {
     super();
     this.state = {
       crawlData: {},
-      peopleData: []
+      display: null,
+      peopleData: [],
+      planetData: [],
+      vehicleData: []
     };
   }
 
