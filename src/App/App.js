@@ -9,17 +9,17 @@ class App extends Component {
     this.state = {
       crawlData: {},
       display: null,
-      peopleData: [],
-      planetData: [],
-      vehicleData: []
+      people: [],
+      planet: [],
+      vehicle: []
     };
   }
 
   async componentDidMount() {
     const crawlData = await this.fetchCrawlData();
-    const peopleData = await this.fetchPeople();
+    const people = await this.fetchPeople();
 
-    this.setState({ crawlData, peopleData });
+    this.setState({ crawlData, people });
   }
 
   fetchCrawlData = async () => {
@@ -45,13 +45,13 @@ class App extends Component {
   fetchPeople = async () => {
     const fetchedPeople = await fetch('https://swapi.co/api/people/');
     const jsonData = await fetchedPeople.json();
-    const peopleData = this.fetchHomeworldSpeies(jsonData.results);
+    const people = this.fetchHomeworldSpeies(jsonData.results);
 
-    return peopleData;
+    return people;
   };
 
-  fetchHomeworldSpeies(peopleData) {
-    const unresolvedPromises = peopleData.map(async person => {
+  fetchHomeworldSpeies(people) {
+    const unresolvedPromises = people.map(async person => {
       let homeworldFetch = await fetch(person.homeworld);
       let homeworldData = await homeworldFetch.json();
 
@@ -72,7 +72,7 @@ class App extends Component {
     return Promise.all(unresolvedPromises);
   }
 
-  displayData = (type) => {
+  selectData = (type) => {
     const display = type.toLowerCase();
     this.setState({display})
   }
@@ -82,7 +82,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox peopleData={this.state.peopleData} displayData={this.displayData}/>
+          <DataBox displayData={this.state[this.state.display]} selectData={this.selectData} />
         </div>
       );
     }
