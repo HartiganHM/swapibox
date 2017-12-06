@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-const Header = ( { episodeNum, episodeTitle, openingCrawl }) => {
+const Header = ( { crawlData }) => {
 
     const romanNumeral = {
         1: 'I',
@@ -17,12 +17,10 @@ const Header = ( { episodeNum, episodeTitle, openingCrawl }) => {
         <div className='Header'>
             <div className='crawl'>
                 <div className='title'>
-                    <span>Episode {romanNumeral.episodeTitle}</span>
-                    <span>{episodeTitle}</span>
+                    <span>Episode {romanNumeral[crawlData.episodeNum]}</span>
+                    <span>{crawlData.episodeTitle}</span>
                 </div>
-                <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
-                <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
-                <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
+                <p>{crawlData.openingCrawl}</p>
             </div>
         </div>
     )
