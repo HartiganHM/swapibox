@@ -4,14 +4,14 @@ import CardContainer from '../CardContainer/CardContainer';
 import './DataBox.css';
 
 const DataBox = ({ peopleData }) => {
+  const buttonArray = [ 'People', 'Planets', 'Vehicles' ].map( type => <Button type='category button' value={type} />);
+
   return (
     <div className="DataBox">
       <Button type='favorites button' value="View Favorites" />
       <header className="header">SWAPI-Box</header>
       <div className="button-box">
-        <Button type='category button' value="People" />
-        <Button type='category button' value="Planets" />
-        <Button type='category button' value="Vehicles" />
+        { buttonArray }
       </div>
       <CardContainer category={peopleData}/>
     </div>
