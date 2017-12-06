@@ -32,12 +32,27 @@ class App extends Component {
     );
   }
 
+  fetchPeople = async () => {
+    const fetchedPeople = await fetch('https://swapi.co/api/people/');
+    const jsonData = fetchedPeople.json();
+    debugger;
+    const peopleArray = this.fetchHomeworldSpeies(jsonData);
+
+    this.setState({ peopleArray });
+  };
+
+  fetchHomeworldSpeies(peopleData) {
+    const unresolvedPromises = peopleData.map(async person => {
+      
+    });
+  }
+
   render() {
     if (this.state.crawlData) {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox />
+          <DataBox fetchPeople={this.fetchPeople} />
         </div>
       );
     }
