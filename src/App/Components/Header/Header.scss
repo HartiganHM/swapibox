@@ -1,6 +1,6 @@
 @import '../../../variables.scss';
 
-.SideBar {
+.Header {
     background: url('../../../Images/stars-2.jpg');
     background-size: contain;
     color: $accent-color;
@@ -11,7 +11,6 @@
         size: 500%;
         weight: 600;
     }
-    // height: 80rem;
     justify-content: center;
     letter-spacing: 0.6rem;
     line-height: 150%;
@@ -24,7 +23,7 @@
         position: relative;
         top: -10rem;
         transform-origin: 50% 100%;
-        animation: crawl 60s linear;
+        animation: crawl 90s linear;
 
         .title {
             display: flex;

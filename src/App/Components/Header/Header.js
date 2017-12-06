@@ -1,9 +1,9 @@
 import React from 'react';
-import './SideBar.css';
+import './Header.css';
 
-const SideBar = () => {
+const Header = () => {
     return(
-        <div className='SideBar'>
+        <div className='Header'>
             <div className='crawl'>
                 <div className='title'>
                     <span>Episode IV</span>
@@ -17,4 +17,4 @@ const SideBar = () => {
     )
 }
 
-export default SideBar;
+export default Header;
