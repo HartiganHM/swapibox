@@ -72,12 +72,17 @@ class App extends Component {
     return Promise.all(unresolvedPromises);
   }
 
+  displayData = (type) => {
+    const display = type.toLowerCase();
+    this.setState({display})
+  }
+
   render() {
     if (this.state.crawlData) {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox peopleData={this.state.peopleData}/>
+          <DataBox peopleData={this.state.peopleData} displayData={this.displayData}/>
         </div>
       );
     }
