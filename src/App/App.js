@@ -19,7 +19,7 @@ class App extends Component {
     this.setState({ crawlData, peopleData });
   }
 
-  async fetchCrawlData () {
+  fetchCrawlData = async () => {
     const key = Math.floor(Math.random() * 7 + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
     const jsonData = await fetchedData.json();
@@ -74,7 +74,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox />
+          <DataBox peopleData={this.state.peopleData}/>
         </div>
       );
     }
