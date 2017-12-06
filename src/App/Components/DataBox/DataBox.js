@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import CardContainer from '../CardContainer/CardContainer';
 import './DataBox.css';
 
-const DataBox = () => {
+const DataBox = ({ peopleData }) => {
   return (
     <div className="DataBox">
       <Button type='favorites button' value="View Favorites" />
@@ -13,7 +13,7 @@ const DataBox = () => {
         <Button type='category button' value="Planets" />
         <Button type='category button' value="Vehicles" />
       </div>
-      <CardContainer />
+      <CardContainer category={peopleData}/>
     </div>
   );
 };
