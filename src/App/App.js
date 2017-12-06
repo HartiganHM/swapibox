@@ -8,31 +8,38 @@ class App extends Component {
     super();
     this.state = {
       crawlData: {}
-    }
+    };
   }
 
   async componentDidMount() {
     const key = Math.floor(Math.random() * 7 + 1);
-    //fetch the thing
     const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
-    //Json the data
     const jsonData = await fetchedData.json();
-    const crawlData = cleanCrawlData(jsonData)
+
+    const crawlData = this.cleanCrawlData(jsonData);
+    this.setState({ crawlData });
     //Send it to a cleaner
     //Set state
-
   }
 
   cleanCrawlData(data) {
     //Take in crawl data
+    return Object.assign(
+      {},
+      {
+        episodeNum: data.episode_id,
+        episodeTitle: data.title,
+        openingCrawl: data.opening_crawl
+      }
+    );
     //Sort out what's needed
     //return new object
   }
 
-  render() {
+  render({ crawlData }) {
     return (
       <div className="App">
-        <Header crawlData/>
+        <Header crawlData={crawlData} />
         <DataBox />
       </div>
     );
