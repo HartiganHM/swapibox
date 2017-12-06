@@ -4,10 +4,44 @@
     background: url('../../../Images/stars-2.jpg');
     background-size: contain;
     color: $accent-color;
+    display: flex;
     flex: 1;
     font: {
         family: $accent-font;
-        size: 2rem;
+        size: 500%;
+        weight: 600;
     }
+    // height: 80rem;
+    justify-content: center;
+    letter-spacing: 0.6rem;
+    line-height: 150%;
+    overflow: hidden;
     padding:$padding-standard;
+    perspective: 40rem;
+    text-align: justify;
+
+    .crawl {
+        position: relative;
+        top: -10rem;
+        transform-origin: 50% 100%;
+        animation: crawl 60s linear;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+@keyframes crawl {
+    0% {
+        top: 0;
+        transform: rotateX(20deg) translateZ(0);
+    }
+
+    100% {
+        top: -600rem;
+        transform: rotateX(25deg) translateZ(-250rem);
+    }
 }
