@@ -2,9 +2,9 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardContainer.css';
 
-const CardContainer = ({ category, toggleFavorite }) => {
+const CardContainer = ({ category, currentDisplay, toggleFavorite }) => {
   const cards = category ? (
-    category.map(obj => <Card data={obj} toggleFavorite={toggleFavorite} />)
+    category.map(obj => <Card data={obj} currentDisplay={currentDisplay} toggleFavorite={toggleFavorite} />)
   ) : (
     <span className="placeholder">Select a category</span>
   );

@@ -41,7 +41,6 @@ class App extends Component {
   };
 
   toggleFavorite = (cardName) => {
-    // let count = this.state.favorites.length;
     console.log('favorite', cardName);
   }
 

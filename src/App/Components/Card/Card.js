@@ -2,7 +2,7 @@ import React from 'react';
 import icon from '../../../Images/Icons/death-star.svg';
 import './Card.css';
 
-const Card = ({ data, toggleFavorite }) => {
+const Card = ({ data, toggleFavorite, currentDisplay }) => {
   const dataPoints = Object.keys(data.data).map(dataPoint => (
     <li className="card-data-set">
       {dataPoint}: {data.data[dataPoint]}
@@ -14,7 +14,7 @@ const Card = ({ data, toggleFavorite }) => {
       <div className="card-header">
         <span className="card-title">{data.name}</span>
         <div className='button-container'>
-            <button className="mark-favorite" onClick={() => toggleFavorite(data.name)}>
+            <button className="mark-favorite" onClick={() => toggleFavorite(data.name, currentDisplay)}>
             </button>
         </div>
       </div>

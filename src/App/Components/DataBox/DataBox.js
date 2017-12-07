@@ -18,7 +18,7 @@ const DataBox = ({ displayData, selectData, currentDisplay, toggleFavorite, favo
       <Button type="favorites button" value="View Favorites" favoriteCount={favoriteCount} />
       <header className="header">SWAPI-Box</header>
       <div className="button-box">{buttonArray}</div>
-      <CardContainer category={displayData} toggleFavorite={toggleFavorite} />
+      <CardContainer category={displayData} currentDisplay={currentDisplay} toggleFavorite={toggleFavorite} />
     </div>
   );
 };
