@@ -21,11 +21,17 @@ class App extends Component {
 
   async componentDidMount() {
     const crawlData = await fetchCrawlData();
+    this.loadCards();
+
+    this.setState({ crawlData });
+  };
+
+  loadCards = async() => {
     const people = await fetchPeople();
     const planets = await fetchPlanets();
     const vehicles = await fetchVehicles();
 
-    this.setState({ crawlData, people, planets, vehicles });
+    this.setState({ people, planets, vehicles });
   }
 
   selectData = type => {
