@@ -141,6 +141,7 @@ class App extends Component {
           <DataBox
             displayData={this.state[this.state.display]}
             selectData={this.selectData}
+            currentDisplay={this.state.display}
           />
         </div>
       );
