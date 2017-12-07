@@ -46,12 +46,12 @@ class App extends Component {
   fetchPeople = async () => {
     const fetchedPeople = await fetch('https://swapi.co/api/people/');
     const jsonData = await fetchedPeople.json();
-    const people = this.fetchHomeworldSpeies(jsonData.results);
+    const people = this.cleanPeopleData(jsonData.results);
 
     return people;
   };
 
-  fetchHomeworldSpeies(people) {
+  cleanPeopleData(people) {
     const unresolvedPromises = people.map(async person => {
       let homeworldFetch = await fetch(person.homeworld);
       let homeworldData = await homeworldFetch.json();
