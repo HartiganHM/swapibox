@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetchCrawlData from '../ApiCalls/crawlData';
+import fetchPeople from '../ApiCalls/peopleData';
 import Header from './Components/Header/Header';
 import DataBox from './Components/DataBox/DataBox';
 import './App.css';
@@ -18,7 +19,7 @@ class App extends Component {
 
   async componentDidMount() {
     const crawlData = await fetchCrawlData();
-    const people = await this.fetchPeople();
+    const people = await fetchPeople();
     const planets = await this.fetchPlanets();
     const vehicles = await this.fetchVehiclesData();
 
