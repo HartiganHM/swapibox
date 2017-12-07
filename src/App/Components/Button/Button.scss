@@ -7,9 +7,14 @@
 
 .category {
     background-color: $button-category;
+    border: 2px solid $white;
     border-radius: 0.3rem;
     color: $white;
     width: 15rem;
+}
+
+.selected {
+    background-color: $background-dark;
 }
 
 .favorites {
