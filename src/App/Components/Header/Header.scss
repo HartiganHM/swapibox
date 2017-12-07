@@ -16,14 +16,14 @@
     line-height: 150%;
     overflow: hidden;
     padding:$padding-standard;
-    perspective: 40rem;
+    perspective: 30rem;
     text-align: justify;
 
     .crawl {
         position: relative;
-        top: -10rem;
+        top: 10rem;
         transform-origin: 50% 100%;
-        animation: crawl 90s linear;
+        animation: crawl 150s linear;
         animation-iteration-count: infinite;
 
         .title {
@@ -36,12 +36,12 @@
 
 @keyframes crawl {
     0% {
-        top: 0;
+        top: 40rem;
         transform: rotateX(20deg) translateZ(0);
     }
 
     100% {
-        top: -600rem;
+        top: -1000rem;
         transform: rotateX(25deg) translateZ(-250rem);
     }
 }
