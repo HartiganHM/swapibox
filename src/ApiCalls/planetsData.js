@@ -16,7 +16,7 @@ const cleanPlanetsData = planets => {
         terrain: planet.terrain,
         population: planet.population,
         climate: planet.climate,
-        residents: residents
+        residents: residents.join(',\n')
       }
     };
   });
