@@ -13,9 +13,10 @@ const Card = ({ data }) => {
     <div className="Card">
       <div className="card-header">
         <span className="card-title">{data.name}</span>
-        <button className="mark-favorite">
-          <img src={icon} alt="death-star-favorite-icon" />
-        </button>
+        <div className='button-container'>
+            <button className="mark-favorite">
+            </button>
+        </div>
       </div>
       <ul className="card-info">{dataPoints}</ul>
     </div>
