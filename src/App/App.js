@@ -41,7 +41,7 @@ class App extends Component {
   };
 
   toggleFavorite = (cardName) => {
-    let count = this.state.favorites.length;
+    // let count = this.state.favorites.length;
     console.log('favorite', cardName);
   }
 
@@ -55,7 +55,7 @@ class App extends Component {
             selectData={this.selectData}
             currentDisplay={this.state.display}
             toggleFavorite={this.toggleFavorite}
-            count={this.state.favorites.length}
+            favoriteCount={this.state.favorites.length}
           />
         </div>
       );
