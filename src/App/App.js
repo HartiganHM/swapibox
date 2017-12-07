@@ -27,37 +27,6 @@ class App extends Component {
     this.setState({ crawlData, people, planets, vehicles });
   }
 
-  fetchPlanets = async () => {
-    const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
-    const jsonPlanets = await fetchedPlanets.json();
-    const planets = this.cleanPlanetsData(jsonPlanets.results);
-
-    return planets;
-  }
-
-  cleanPlanetsData = (planets) => {
-    const unresolvedPromises = planets.map(async planet => {
-      let residents = planet.residents.map(async resident => {
-        let fetchedResident = await fetch(resident);
-        let jsonResident = await fetchedResident.json();
-
-        return jsonResident.name;
-      });
-
-      return {
-        name: planet.name,
-        data: {
-          terrain: planet.terrain,
-          population: planet.population,
-          climate: planet.climate,
-          residents: await Promise.all(residents)
-        }
-      };
-    });
-
-    return Promise.all(unresolvedPromises);
-  };
-
   fetchVehiclesData = async() => {
     const fetchedVehicles = await fetch('https://swapi.co/api/vehicles/');
     const jsonVehicles = await fetchedVehicles.json();
