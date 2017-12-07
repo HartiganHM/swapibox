@@ -28,3 +28,5 @@ const cleanPlanetsData = (planets) => {
 
     return Promise.all(unresolvedPromises);
 };
+
+export default fetchPlanets;
