@@ -17,7 +17,6 @@ class App extends Component {
       planets: [],
       vehicles: [],
       favorites: [],
-      count: 0
     };
   }
 
@@ -56,7 +55,7 @@ class App extends Component {
             selectData={this.selectData}
             currentDisplay={this.state.display}
             toggleFavorite={this.toggleFavorite}
-            count={this.state.count}
+            count={this.state.favorites.length}
           />
         </div>
       );
