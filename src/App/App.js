@@ -49,8 +49,11 @@ class App extends Component {
     this.setState({favorites})
   }
 
-  removeFavorite = (selected) => {
-    const favorites = this.state.favorites.slice().indexOf(selected);
+  removeFavorite = (selectedCard) => {
+    const favorites = this.state.favorites.filter( (card) => {
+      return card.name !== selectedCard.name
+    })
+
     this.setState({favorites})
   }
 
@@ -64,6 +67,7 @@ class App extends Component {
             selectData={this.selectData}
             currentDisplay={this.state.display}
             toggleFavorite={this.toggleFavorite}
+            removeFavorite={this.removeFavorite}
             favoriteCount={this.state.favorites.length}
           />
         </div>
