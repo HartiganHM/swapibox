@@ -36,13 +36,16 @@ class App extends Component {
   }
 
   selectData = type => {
+    if (type === 'View Favorites') {
+      type = 'favorites';
+    }
+
     const display = type.toLowerCase();
     this.setState({ display });
   };
 
   toggleFavorite = (selectedCard, category) => {
-    let card = this.state[category.card]
-    let favorites = [...this.state.favorites, card ]
+    const favorites = [...this.state.favorites, selectedCard ]
     this.setState({favorites})
   }
 
