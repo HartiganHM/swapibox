@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import CardContainer from '../CardContainer/CardContainer';
 import './DataBox.css';
 
-const DataBox = ({ displayData, selectData, currentDisplay }) => {
+const DataBox = ({ displayData, selectData, currentDisplay, toggleFavorite }) => {
   const buttonArray = ['People', 'Planets', 'Vehicles'].map(type => (
     <Button
       type="category button"
@@ -18,7 +18,7 @@ const DataBox = ({ displayData, selectData, currentDisplay }) => {
       <Button type="favorites button" value="View Favorites" />
       <header className="header">SWAPI-Box</header>
       <div className="button-box">{buttonArray}</div>
-      <CardContainer category={displayData} />
+      <CardContainer category={displayData} toggleFavorite={toggleFavorite} />
     </div>
   );
 };
