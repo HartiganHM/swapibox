@@ -1,7 +1,7 @@
 const fetchPlanets = async () => {
     const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
     const jsonPlanets = await fetchedPlanets.json();
-    const planets = this.cleanPlanetsData(jsonPlanets.results);
+    const planets = cleanPlanetsData(jsonPlanets.results);
 
     return planets;
 }
