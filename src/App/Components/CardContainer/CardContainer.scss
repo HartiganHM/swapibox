@@ -5,14 +5,15 @@
     color: $background-light;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    text-align: center;
+    justify-content: center;
+    text-align: left;
     padding: $padding-small;
 
-    &:after {
-        content: '';
-        flex: auto;
-    }
+
+    // &:after {
+    //     content: "";
+    //     flex: auto;
+    // }
 
     .placeholder {
         align-self: center;
