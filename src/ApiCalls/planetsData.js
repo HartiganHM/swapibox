@@ -8,13 +8,15 @@ const fetchPlanets = async () => {
 
 const cleanPlanetsData = planets => {
   const unresolvedPromises = planets.map(async planet => {
+    let residents = await fetchResidents(planet.residents);
+
     return {
       name: planet.name,
       data: {
         terrain: planet.terrain,
         population: planet.population,
         climate: planet.climate,
-        residents: await fetchResidents(planet.residents)
+        residents: residents
       }
     };
   });
@@ -30,7 +32,7 @@ const fetchResidents = residents => {
     return jsonResident.name;
   });
 
-  return Promise.all(residents);
+  return Promise.all(unresolvedPromises);
 };
 
 export default fetchPlanets;
