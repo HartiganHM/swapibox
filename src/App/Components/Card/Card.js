@@ -14,7 +14,7 @@ const Card = ({ data, toggleFavorite, currentDisplay }) => {
       <div className="card-header">
         <span className="card-title">{data.name}</span>
         <div className='button-container'>
-            <button className="mark-favorite" onClick={() => toggleFavorite(data, currentDisplay)}>
+            <button className="mark-favorite" onClick={() => toggleFavorite(data)}>
             </button>
         </div>
       </div>

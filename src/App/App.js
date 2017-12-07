@@ -44,7 +44,7 @@ class App extends Component {
     this.setState({ display });
   };
 
-  toggleFavorite = (selectedCard, category) => {
+  toggleFavorite = (selectedCard) => {
     const favorites = [...this.state.favorites, selectedCard ]
     this.setState({favorites})
   }
