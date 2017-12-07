@@ -21,7 +21,7 @@ class App extends Component {
     const planets = await this.fetchPlanets();
     const vehicles = await this.fetchVehiclesData();
 
-    this.setState({ crawlData, people, planets });
+    this.setState({ crawlData, people, planets, vehicles });
   }
 
   fetchCrawlData = async () => {
@@ -120,7 +120,7 @@ class App extends Component {
         data: {
           model: vehicle.model,
           class: vehicle.vehicle_class,
-          passenger: data.passengers
+          passengers: vehicle.passengers
         }
       }
     })
