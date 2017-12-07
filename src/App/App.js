@@ -76,12 +76,12 @@ class App extends Component {
   fetchPlanets = async () => {
     const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
     const jsonData = await fetchedPlanets.json();
-    const planets = this.fetchResidents(jsonData.results);
+    const planets = this.cleanPlanetsData(jsonData.results);
 
     return planets;
   }
 
-  fetchResidents = (planets) => {
+  cleanPlanetsData = (planets) => {
     const unresolvedPromises = planets.map(async planet => {
       let residents = planet.residents.map(async resident => {
         let fetchedResident = await fetch(resident);
