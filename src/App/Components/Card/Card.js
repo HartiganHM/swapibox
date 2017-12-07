@@ -5,7 +5,7 @@ const Card = ({ data, toggleFavorite, removeFavorite, currentDisplay }) => {
   const clickFunction = currentDisplay === 'favorites' ? removeFavorite : toggleFavorite;
   const dataPoints = Object.keys(data.data).map(dataPoint => (
     <li className="card-data-set">
-      {dataPoint}: {data.data[dataPoint]}
+      {dataPoint}: {data.data[dataPoint].length ? data.data[dataPoint] : 0}
     </li>
   ));
 
