@@ -81,6 +81,29 @@ class App extends Component {
     return planets;
   }
 
+  fetchResidents = (planets) => {
+    const unresolvedPromises = planets.map(async planet => {
+      let residents = planet.residents.map(async resident => {
+        let fetchedResident = await fetch(resident);
+        let jsonResident = await fetchedResident.json();
+
+        return jsonResident.name;
+      });
+
+      return {
+        name: planet.name,
+        data: {
+          terrain: planet.terrain,
+          population: planet.population,
+          climate: planet.climate,
+          residents: await Promise.all(residents)
+        }
+      };
+    });
+
+    return Promise.all(unresolvedPromises);
+  }
+
   selectData = type => {
     const display = type.toLowerCase();
     this.setState({ display });
