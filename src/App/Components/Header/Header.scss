@@ -5,12 +5,12 @@
     background-size: contain;
     color: $accent-color;
     display: flex;
-    flex: 1;
     font: {
         family: $accent-font;
         size: 500%;
         weight: 600;
     }
+    height: 30rem;
     justify-content: center;
     letter-spacing: 0.6rem;
     line-height: 150%;

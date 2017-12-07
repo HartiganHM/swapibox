@@ -3,5 +3,4 @@
   display: flex;
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
-  flex-direction: column;
-  height: inherit; }
+  flex-direction: column; }
