@@ -19,6 +19,7 @@ class App extends Component {
     const crawlData = await this.fetchCrawlData();
     const people = await this.fetchPeople();
     const planets = await this.fetchPlanets();
+    const vehicles = await this.fetchVehiclesData();
 
     this.setState({ crawlData, people, planets });
   }
@@ -111,6 +112,21 @@ class App extends Component {
 
     return vehicles;
   };
+
+  cleanVehicleData = (vehicles) => {
+    const unresolvedPromises = vehicles.map(async vehicle => {
+      return {
+        name: vehicle.name,
+        data: {
+          model: vehicle.model,
+          class: vehicle.vehicle_class,
+          passenger: data.passengers
+        }
+      }
+    })
+
+    return Promise.all(unresolvedPromises);
+  }
 
   selectData = type => {
     const display = type.toLowerCase();
