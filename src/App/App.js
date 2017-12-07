@@ -107,14 +107,14 @@ class App extends Component {
 
   fetchVehiclesData = async() => {
     const fetchedVehicles = await fetch('https://swapi.co/api/vehicles/');
-    const jsonPlanets = await fetchedVehicles.json();
-    const vehicles = this.cleanVehicleData(jsonPlanets.results);
+    const jsonVehicles = await fetchedVehicles.json();
+    const vehicles = this.cleanVehicleData(jsonVehicles.results);
 
     return vehicles;
   };
 
   cleanVehicleData = (vehicles) => {
-    const unresolvedPromises = vehicles.map(async vehicle => {
+    const unresolvedPromises = vehicles.map( vehicle => {
       return {
         name: vehicle.name,
         data: {
