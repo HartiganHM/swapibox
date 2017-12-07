@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetchCrawlData from '../ApiCalls/crawlData';
 import fetchPeople from '../ApiCalls/peopleData';
 import fetchPlanets from '../ApiCalls/planetsData';
+import fetchVehicles from '../ApiCalls/vehiclesData';
 import Header from './Components/Header/Header';
 import DataBox from './Components/DataBox/DataBox';
 import './App.css';
@@ -22,7 +23,7 @@ class App extends Component {
     const crawlData = await fetchCrawlData();
     const people = await fetchPeople();
     const planets = await fetchPlanets();
-    const vehicles = await this.fetchVehiclesData();
+    const vehicles = await fetchVehicles();
 
     this.setState({ crawlData, people, planets, vehicles });
   }
