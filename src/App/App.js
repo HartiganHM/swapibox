@@ -10,16 +10,17 @@ class App extends Component {
       crawlData: {},
       display: null,
       people: [],
-      planet: [],
-      vehicle: []
+      planets: [],
+      vehicles: []
     };
   }
 
   async componentDidMount() {
     const crawlData = await this.fetchCrawlData();
     const people = await this.fetchPeople();
+    const planets = await this.fetchPlanets();
 
-    this.setState({ crawlData, people });
+    this.setState({ crawlData, people, planets });
   }
 
   fetchCrawlData = async () => {
@@ -29,7 +30,7 @@ class App extends Component {
     const crawlData = this.cleanCrawlData(jsonData);
 
     return crawlData;
-  }
+  };
 
   cleanCrawlData(data) {
     return Object.assign(
@@ -60,29 +61,40 @@ class App extends Component {
 
       return {
         name: person.name,
-        data : {
+        data: {
           homeworld: homeworldData.name,
           species: speciesData.name,
           language: speciesData.language,
           population: homeworldData.population
         }
-      }
+      };
     });
 
     return Promise.all(unresolvedPromises);
   }
 
-  selectData = (type) => {
-    const display = type.toLowerCase();
-    this.setState({display})
+  fetchPlanets = async () => {
+    const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
+    const jsonData = await fetchedPlanets.json();
+    const planets = this.fetchResidents(jsonData.results);
+
+    return planets;
   }
+
+  selectData = type => {
+    const display = type.toLowerCase();
+    this.setState({ display });
+  };
 
   render() {
     if (this.state.crawlData) {
       return (
         <div className="App">
           <Header crawlData={this.state.crawlData} />
-          <DataBox displayData={this.state[this.state.display]} selectData={this.selectData} />
+          <DataBox
+            displayData={this.state[this.state.display]}
+            selectData={this.selectData}
+          />
         </div>
       );
     }
