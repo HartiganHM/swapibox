@@ -45,6 +45,9 @@ class App extends Component {
   };
 
   toggleFavorite = (selectedCard) => {
+    if (Object.values(this.state.favorites).find( card => card === selectedCard)) {
+      return;
+    }
     const favorites = [...this.state.favorites, selectedCard ]
     this.setState({favorites})
   }
