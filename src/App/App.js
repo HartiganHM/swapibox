@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetchCrawlData from '../ApiCalls/crawlData';
 import Header from './Components/Header/Header';
 import DataBox from './Components/DataBox/DataBox';
 import './App.css';
@@ -16,32 +17,12 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const crawlData = await this.fetchCrawlData();
+    const crawlData = await fetchCrawlData();
     const people = await this.fetchPeople();
     const planets = await this.fetchPlanets();
     const vehicles = await this.fetchVehiclesData();
 
     this.setState({ crawlData, people, planets, vehicles });
-  }
-
-  fetchCrawlData = async () => {
-    const key = Math.floor(Math.random() * 7 + 1);
-    const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
-    const jsonData = await fetchedData.json();
-    const crawlData = this.cleanCrawlData(jsonData);
-
-    return crawlData;
-  };
-
-  cleanCrawlData(data) {
-    return Object.assign(
-      {},
-      {
-        episodeNum: data.episode_id,
-        episodeTitle: data.title,
-        openingCrawl: data.opening_crawl
-      }
-    );
   }
 
   fetchPeople = async () => {
