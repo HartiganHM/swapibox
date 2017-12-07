@@ -40,8 +40,8 @@ class App extends Component {
     this.setState({ display });
   };
 
-  toggleFavorite = (cardName) => {
-    console.log('favorite', cardName);
+  toggleFavorite = (cardName, category) => {
+    console.log('favorite', cardName, category);
   }
 
   render() {
