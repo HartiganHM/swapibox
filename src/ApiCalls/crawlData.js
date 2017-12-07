@@ -1,13 +1,13 @@
-fetchCrawlData = async () => {
+const fetchCrawlData = async () => {
     const key = Math.floor(Math.random() * 7 + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
     const jsonData = await fetchedData.json();
-    const crawlData = this.cleanCrawlData(jsonData);
+    const crawlData = cleanCrawlData(jsonData);
 
     return crawlData;
 };
 
-cleanCrawlData(data) {
+const cleanCrawlData = (data) => {
     return Object.assign(
         {},
         {
