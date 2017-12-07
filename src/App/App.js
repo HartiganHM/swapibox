@@ -75,8 +75,8 @@ class App extends Component {
 
   fetchPlanets = async () => {
     const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
-    const jsonData = await fetchedPlanets.json();
-    const planets = this.cleanPlanetsData(jsonData.results);
+    const jsonPlanets = await fetchedPlanets.json();
+    const planets = this.cleanPlanetsData(jsonPlanets.results);
 
     return planets;
   }
@@ -102,7 +102,15 @@ class App extends Component {
     });
 
     return Promise.all(unresolvedPromises);
-  }
+  };
+
+  fetchVehiclesData = async() => {
+    const fetchedVehicles = await fetch('https://swapi.co/api/vehicles/');
+    const jsonPlanets = await fetchedVehicles.json();
+    const vehicles = this.cleanVehicleData(jsonPlanets.results);
+
+    return vehicles;
+  };
 
   selectData = type => {
     const display = type.toLowerCase();
