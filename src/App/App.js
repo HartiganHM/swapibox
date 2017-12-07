@@ -49,6 +49,11 @@ class App extends Component {
     this.setState({favorites})
   }
 
+  removeFavorite = (selected) => {
+    const favorites = this.state.favorites.slice().indexOf(selected);
+    this.setState({favorites})
+  }
+
   render() {
     if (this.state.crawlData) {
       return (
