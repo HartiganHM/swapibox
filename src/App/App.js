@@ -39,6 +39,10 @@ class App extends Component {
     this.setState({ display });
   };
 
+  toggleFavorite = (cardName) => {
+    console.log('favorite', cardName);
+  }
+
   render() {
     if (this.state.crawlData) {
       return (
@@ -48,6 +52,7 @@ class App extends Component {
             displayData={this.state[this.state.display]}
             selectData={this.selectData}
             currentDisplay={this.state.display}
+            toggleFavorite={this.toggleFavorite}
           />
         </div>
       );
