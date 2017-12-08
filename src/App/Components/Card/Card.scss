@@ -66,3 +66,10 @@
         }
     }
 }
+
+.selected-favorite {
+    transition: border 0.5s ease, color 0.5s ease;
+    background-image: url('../../../Images/stars.jpg');
+    border: $border-card-selected;
+    color: $white;
+}
