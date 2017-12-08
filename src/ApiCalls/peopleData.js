@@ -17,10 +17,10 @@ const cleanPeopleData = (people) => {
       return {
         name: person.name,
         data: {
-          homeworld: homeworldData.name,
-          species: speciesData.name,
-          language: speciesData.language,
-          population: homeworldData.population
+          Homeworld: homeworldData.name,
+          Species: speciesData.name,
+          Language: speciesData.language,
+          Population: homeworldData.population
         }
       };
     });

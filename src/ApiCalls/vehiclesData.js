@@ -11,9 +11,9 @@ const cleanVehicleData = (vehicles) => {
       return {
         name: vehicle.name,
         data: {
-          model: vehicle.model,
-          class: vehicle.vehicle_class,
-          passengers: vehicle.passengers
+          Model: vehicle.model,
+          Class: vehicle.vehicle_class,
+          Passengers: vehicle.passengers
         }
       }
     })

@@ -13,10 +13,10 @@ const cleanPlanetsData = planets => {
     return {
       name: planet.name,
       data: {
-        terrain: planet.terrain,
-        population: planet.population,
-        climate: planet.climate,
-        residents: residents.join(',\n')
+        Terrain: planet.terrain,
+        Population: planet.population,
+        Climate: planet.climate,
+        Residents: residents.join(',\n')
       }
     };
   });
