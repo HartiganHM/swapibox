@@ -3,6 +3,7 @@
 .DataBox {
     background-color: $background-light;
     display: flex;
+    flex: 1;
     flex-direction: column;
     padding: $padding-standard;
     position: relative;
