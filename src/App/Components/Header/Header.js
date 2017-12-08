@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 const Header = ({ crawlData }) => {
@@ -23,6 +24,10 @@ const Header = ({ crawlData }) => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  crawlData: PropTypes.object
 };
 
 export default Header;

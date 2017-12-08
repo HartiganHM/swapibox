@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 import CardContainer from '../CardContainer/CardContainer';
+import PropTypes from 'prop-types';
 import './DataBox.css';
 
 const DataBox = ({
@@ -14,6 +15,7 @@ const DataBox = ({
 }) => {
   const buttonArray = ['People', 'Planets', 'Vehicles'].map(type => (
     <Button
+      key={type}
       type='category button'
       value={type}
       selectData={selectData}
@@ -40,6 +42,16 @@ const DataBox = ({
       />
     </div>
   );
+};
+
+DataBox.propTypes = {
+  displayData: PropTypes.array,
+  selectData: PropTypes.func,
+  currentDisplay: PropTypes.string,
+  saveFavorite: PropTypes.func,
+  currentFavorites: PropTypes.array,
+  removeFavorite: PropTypes.func,
+  favoriteCount: PropTypes.number
 };
 
 export default DataBox;

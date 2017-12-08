@@ -16,7 +16,7 @@ class App extends Component {
       people: [],
       planets: [],
       vehicles: [],
-      favorites: [],
+      favorites: []
     };
   }
 
@@ -25,15 +25,15 @@ class App extends Component {
     this.loadCards();
 
     this.setState({ crawlData });
-  };
+  }
 
-  loadCards = async() => {
+  loadCards = async () => {
     const people = await fetchPeople();
     const planets = await fetchPlanets();
     const vehicles = await fetchVehicles();
 
     this.setState({ people, planets, vehicles });
-  }
+  };
 
   selectData = type => {
     if (type === 'View Favorites') {
@@ -44,26 +44,28 @@ class App extends Component {
     this.setState({ display });
   };
 
-  saveFavorite = (selectedCard) => {
-    if (Object.values(this.state.favorites).find( card => card === selectedCard)) {
+  saveFavorite = selectedCard => {
+    if (
+      Object.values(this.state.favorites).find(card => card === selectedCard)
+    ) {
       return;
     }
-    const favorites = [...this.state.favorites, selectedCard ]
-    this.setState({favorites})
-  }
+    const favorites = [...this.state.favorites, selectedCard];
+    this.setState({ favorites });
+  };
 
-  removeFavorite = (selectedCard) => {
-    const favorites = this.state.favorites.filter( (card) => {
-      return card.name !== selectedCard.name
-    })
+  removeFavorite = selectedCard => {
+    const favorites = this.state.favorites.filter(card => {
+      return card.name !== selectedCard.name;
+    });
 
-    this.setState({favorites})
-  }
+    this.setState({ favorites });
+  };
 
   render() {
     if (this.state.crawlData) {
       return (
-        <div className='App'>
+        <div className="App">
           <Header crawlData={this.state.crawlData} />
           <DataBox
             displayData={this.state[this.state.display]}
