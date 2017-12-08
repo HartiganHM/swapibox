@@ -63,6 +63,10 @@
 
         .card-data-set {
             padding: $padding-small;
+
+            .data-key {
+                font-weight: 600;
+            }
         }
     }
 }
