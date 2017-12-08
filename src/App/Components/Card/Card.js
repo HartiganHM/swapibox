@@ -3,6 +3,7 @@ import './Card.css';
 
 const Card = ({ data, currentFavorites, toggleFavorite, removeFavorite, currentDisplay }) => {
   const type = Object.values(currentFavorites).find( card => card === data ) ? 'Card selected-favorite' : 'Card';
+  const favorited = Object.values(currentFavorites).find( card => card === data ) ? 'mark-favorite current-favorite' : 'mark-favorite';
   const clickFunction = currentDisplay === 'favorites' ? removeFavorite : toggleFavorite;
   const dataPoints = Object.keys(data.data).map(dataPoint => (
     <li className="card-data-set">
@@ -16,7 +17,7 @@ const Card = ({ data, currentFavorites, toggleFavorite, removeFavorite, currentD
         <span className="card-title">{data.name}</span>
         <div className='button-container'>
             <button
-                className="mark-favorite"
+                className={favorited}
                 onClick={ () => clickFunction(data) }>
             </button>
         </div>
