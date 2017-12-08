@@ -63,7 +63,7 @@ class App extends Component {
   render() {
     if (this.state.crawlData) {
       return (
-        <div className="App">
+        <div className='App'>
           <Header crawlData={this.state.crawlData} />
           <DataBox
             displayData={this.state[this.state.display]}

@@ -7,7 +7,7 @@ const Button = ({ type, value, selectData, currentDisplay, favoriteCount }) => {
   return (
     <button className={buttonClass} onClick={() => selectData(value)}>
       {value}{' '}
-      <span className="counter">{value === 'View Favorites' ? `${favoriteCount}` : ''}</span>
+      <span className='counter'>{value === 'View Favorites' ? `${favoriteCount}` : ''}</span>
     </button>
   );
 };

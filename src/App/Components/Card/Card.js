@@ -6,15 +6,15 @@ const Card = ({ data, currentFavorites, saveFavorite, removeFavorite, currentDis
   const favorited = type === 'Card' ? 'mark-favorite' : 'mark-favorite current-favorite';
   const clickFunction = currentDisplay === 'favorites' ? removeFavorite : saveFavorite;
   const dataPoints = Object.keys(data.data).map(dataPoint => (
-    <li className="card-data-set">
+    <li className='card-data-set'>
       <span className='data-key'>{ dataPoint }</span>: { data.data[dataPoint].length ? data.data[dataPoint] : 0 }
     </li>
   ));
 
   return (
     <div className={type}>
-      <div className="card-header">
-        <span className="card-title">{data.name}</span>
+      <div className='card-header'>
+        <span className='card-title'>{data.name}</span>
         <div className='button-container'>
             <button
                 className={favorited}
@@ -22,7 +22,7 @@ const Card = ({ data, currentFavorites, saveFavorite, removeFavorite, currentDis
             </button>
         </div>
       </div>
-      <ul className="card-info">{dataPoints}</ul>
+      <ul className='card-info'>{dataPoints}</ul>
     </div>
   );
 };
