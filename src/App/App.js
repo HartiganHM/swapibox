@@ -15,7 +15,8 @@ class App extends Component {
       display: null,
       people: [],
       planets: [],
-      vehicles: []
+      vehicles: [],
+      favorites: [],
     };
   }
 
@@ -35,9 +36,29 @@ class App extends Component {
   }
 
   selectData = type => {
+    if (type === 'View Favorites') {
+      type = 'favorites';
+    }
+
     const display = type.toLowerCase();
     this.setState({ display });
   };
+
+  toggleFavorite = (selectedCard) => {
+    if (Object.values(this.state.favorites).find( card => card === selectedCard)) {
+      return;
+    }
+    const favorites = [...this.state.favorites, selectedCard ]
+    this.setState({favorites})
+  }
+
+  removeFavorite = (selectedCard) => {
+    const favorites = this.state.favorites.filter( (card) => {
+      return card.name !== selectedCard.name
+    })
+
+    this.setState({favorites})
+  }
 
   render() {
     if (this.state.crawlData) {
@@ -48,6 +69,10 @@ class App extends Component {
             displayData={this.state[this.state.display]}
             selectData={this.selectData}
             currentDisplay={this.state.display}
+            currentFavorites={this.state.favorites}
+            toggleFavorite={this.toggleFavorite}
+            removeFavorite={this.removeFavorite}
+            favoriteCount={this.state.favorites.length}
           />
         </div>
       );
