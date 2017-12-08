@@ -4,6 +4,7 @@ html {
     family: sans-serif;
     size: 62.5%;
   }
+  height: 100%;
 }
 
 body {
@@ -15,4 +16,8 @@ body {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+#root {
+  height: inherit;
 }
