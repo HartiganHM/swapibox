@@ -7,7 +7,7 @@ const DataBox = ({
   displayData,
   selectData,
   currentDisplay,
-  toggleFavorite,
+  saveFavorite,
   currentFavorites,
   removeFavorite,
   favoriteCount
@@ -35,7 +35,7 @@ const DataBox = ({
         category={displayData}
         currentDisplay={currentDisplay}
         currentFavorites={currentFavorites}
-        toggleFavorite={toggleFavorite}
+        saveFavorite={saveFavorite}
         removeFavorite={removeFavorite}
       />
     </div>

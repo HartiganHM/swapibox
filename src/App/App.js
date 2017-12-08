@@ -44,7 +44,7 @@ class App extends Component {
     this.setState({ display });
   };
 
-  toggleFavorite = (selectedCard) => {
+  saveFavorite = (selectedCard) => {
     if (Object.values(this.state.favorites).find( card => card === selectedCard)) {
       return;
     }
@@ -70,7 +70,7 @@ class App extends Component {
             selectData={this.selectData}
             currentDisplay={this.state.display}
             currentFavorites={this.state.favorites}
-            toggleFavorite={this.toggleFavorite}
+            saveFavorite={this.saveFavorite}
             removeFavorite={this.removeFavorite}
             favoriteCount={this.state.favorites.length}
           />
