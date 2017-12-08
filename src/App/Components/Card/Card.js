@@ -16,10 +16,10 @@ const Card = ({
     type === 'Card' ? 'mark-favorite' : 'mark-favorite current-favorite';
   const clickFunction =
     type === 'Card selected-favorite' ? removeFavorite : saveFavorite;
-  const dataPoints = Object.keys(displayData.data).map(dataPoint => (
+  const dataPoints = Object.keys(displayData.list).map(dataPoint => (
     <li key={dataPoint} className="card-data-set">
       <span className="data-key">{dataPoint}</span>:{' '}
-      {displayData.data[dataPoint].length ? displayData.data[dataPoint] : 0}
+      {displayData.list[dataPoint].length ? displayData.list[dataPoint] : 0}
     </li>
   ));
 

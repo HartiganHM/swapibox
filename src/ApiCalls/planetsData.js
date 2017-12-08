@@ -12,7 +12,7 @@ const cleanPlanetsData = planets => {
 
     return {
       name: planet.name,
-      data: {
+      list: {
         Terrain: planet.terrain,
         Population: planet.population,
         Climate: planet.climate,

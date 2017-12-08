@@ -7,13 +7,13 @@ const fetchCrawlData = async () => {
   return crawlData;
 };
 
-const cleanCrawlData = data => {
+const cleanCrawlData = neededData => {
   return Object.assign(
     {},
     {
-      episodeNum: data.episode_id,
-      episodeTitle: data.title,
-      openingCrawl: data.opening_crawl
+      episodeNum: neededData.episode_id,
+      episodeTitle: neededData.title,
+      openingCrawl: neededData.opening_crawl
     }
   );
 };

@@ -10,7 +10,7 @@ const cleanVehicleData = vehicles => {
   const unresolvedPromises = vehicles.map(vehicle => {
     return {
       name: vehicle.name,
-      data: {
+      list: {
         Model: vehicle.model,
         Class: vehicle.vehicle_class,
         Passengers: vehicle.passengers

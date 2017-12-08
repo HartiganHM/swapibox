@@ -16,7 +16,7 @@ const cleanPeopleData = people => {
 
     return {
       name: person.name,
-      data: {
+      list: {
         Homeworld: homeworldData.name,
         Species: speciesData.name,
         Language: speciesData.language,
