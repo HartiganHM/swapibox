@@ -6,9 +6,10 @@ const CardContainer = ({ category, currentDisplay, toggleFavorite, removeFavorit
   const cards = category ? (
     category.map(obj => (
       <Card data={obj} currentDisplay={currentDisplay} toggleFavorite={toggleFavorite} removeFavorite={removeFavorite}/>)))
-      : (<span className="placeholder">Select a category</span>);
+      : '';
+    const message = currentDisplay === 'favorites' ? (<span className="placeholder">No favorites to display</span>) : (<span className="placeholder">Select a category</span>);
 
-  return <div className="card-container">{cards}</div>;
+  return <div className="card-container">{cards.length ? cards : message}</div>;
 };
 
 export default CardContainer;
