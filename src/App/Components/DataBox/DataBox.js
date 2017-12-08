@@ -8,6 +8,7 @@ const DataBox = ({
   selectData,
   currentDisplay,
   toggleFavorite,
+  currentFavorites,
   removeFavorite,
   favoriteCount
 }) => {
@@ -33,6 +34,7 @@ const DataBox = ({
       <CardContainer
         category={displayData}
         currentDisplay={currentDisplay}
+        currentFavorites={currentFavorites}
         toggleFavorite={toggleFavorite}
         removeFavorite={removeFavorite}
       />

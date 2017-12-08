@@ -69,6 +69,7 @@ class App extends Component {
             displayData={this.state[this.state.display]}
             selectData={this.selectData}
             currentDisplay={this.state.display}
+            currentFavorites={this.state.favorites}
             toggleFavorite={this.toggleFavorite}
             removeFavorite={this.removeFavorite}
             favoriteCount={this.state.favorites.length}
