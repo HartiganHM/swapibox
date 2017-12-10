@@ -19,7 +19,6 @@ describe('Crawl Data Tests', () => {
 
   it('Should return an object when called', async () => {
       const crawlData = await fetchCrawlData();
-      console.log(crawlData)
 
       expect(typeof crawlData).toEqual('object');
   })
