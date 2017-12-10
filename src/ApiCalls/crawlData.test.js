@@ -3,6 +3,7 @@ import fetchCrawlData from './crawlData';
 
 window.fetch = jest.fn().mockImplementation(() =>
   Promise.resolve({
+    status: 200,
     json: () =>
       Promise.resolve({
         episodeNum: 7,
@@ -18,8 +19,7 @@ describe('Crawl Data Tests', () => {
   });
 
   it('Should return an object when called', async () => {
-      const crawlData = await fetchCrawlData();
-
-      expect(typeof crawlData).toEqual('object');
-  })
+    const crawlData = await fetchCrawlData();
+    expect(typeof crawlData).toEqual('object');
+  });
 });
