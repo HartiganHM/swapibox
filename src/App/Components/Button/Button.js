@@ -5,15 +5,14 @@ import './Button.css';
 const Button = ({ type, value, selectData, currentDisplay, favoriteCount }) => {
   const buttonClass =
     value.toLowerCase() === currentDisplay ? `${type} selected` : type;
-  const buttonImageSrc = '../../../Images/Icons/' + value.toLowerCase() + '.svg'
-  const buttonImage = <img className='category-button-image' src={buttonImageSrc} />;
+  const buttonImageClass = 'category-button-image-' + value.toLowerCase();
+  const buttonImage = <div className={buttonImageClass}></div>;
+  const counter = <span className='counter'>{favoriteCount}</span>
 
   return (
     <button className={buttonClass} onClick={() => selectData(value)}>
       {value}{' '}
-      <span className='counter'>
-        {value === 'View Favorites' ? `${favoriteCount}` : buttonImage}
-      </span>
+      {value === 'View Favorites' ? counter : buttonImage}
     </button>
   );
 };
