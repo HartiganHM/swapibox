@@ -52,8 +52,6 @@ describe('People Data Tests', () => {
         }
     ]
 
-      console.log(peopleData)
       expect(peopleData).toEqual(expectedObject);
   });
-
 });
