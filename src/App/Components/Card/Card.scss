@@ -48,6 +48,10 @@
                     background-image: url('../../../Images/Icons/death-star-yellow.svg');
                     background-size: 2.5rem;
                 }
+
+                &:focus {
+                    outline: none;
+                }
             }
             .current-favorite {
                 background-image: url('../../../Images/Icons/death-star-yellow.svg');

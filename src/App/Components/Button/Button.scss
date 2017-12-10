@@ -10,7 +10,28 @@
     border: 2px solid $white;
     border-radius: 0.3rem;
     color: $white;
+    display: flex;
+    justify-content: space-around;
     width: 15rem;
+
+    .category-button-image-people,
+    .category-button-image-planets,
+    .category-button-image-vehicles {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .category-button-image-people {
+        background-image: url('../../../Images/Icons/people-selected.svg');
+    }
+
+    .category-button-image-planets {
+        background-image: url('../../../Images/Icons/planets-selected.svg');
+    }
+
+    .category-button-image-vehicles {
+        background-image: url('../../../Images/Icons/vehicles-selected.svg');
+    }
 }
 
 .selected {
