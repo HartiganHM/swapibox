@@ -5,11 +5,9 @@ const fetchVehicles = async () => {
     const vehicles = cleanVehicleData(jsonVehicles.results);
 
     return vehicles;
-
   } catch (error) {
-    return error = new Error('Failed to fetch vehicles data');
+    return (error = new Error('Failed to fetch vehicles data'));
   }
-
 };
 
 const cleanVehicleData = vehicles => {

@@ -5,9 +5,8 @@ const fetchPeople = async () => {
     const people = cleanPeopleData(jsonData.results);
 
     return people;
-
   } catch (error) {
-    return error = new Error('Failed to fetch people data')
+    return (error = new Error('Failed to fetch people data'));
   }
 };
 

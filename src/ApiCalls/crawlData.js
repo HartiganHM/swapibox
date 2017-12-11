@@ -7,7 +7,7 @@ const fetchCrawlData = async () => {
 
     return crawlData;
   } catch (error) {
-    return error = new Error('Failed to fetch crawl data')
+    return (error = new Error('Failed to fetch crawl data'));
   }
 };
 
