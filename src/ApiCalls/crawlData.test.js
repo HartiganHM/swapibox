@@ -33,6 +33,6 @@ describe('Crawl Data Tests', () => {
     const expectedError = Error('Failed to fetch crawl data');
     const crawlData = await fetchCrawlData();
 
-    expect(crawlData).toEqual(expectedError)
+    expect(crawlData).toEqual(expectedError);
   });
 });

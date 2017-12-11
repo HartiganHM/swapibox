@@ -62,6 +62,6 @@ describe('Planets Data Tests', () => {
     const expectedError = Error('Failed to fetch vehicles data');
     const vehiclesData = await fetchVehicles();
 
-    expect(vehiclesData).toEqual(expectedError)
+    expect(vehiclesData).toEqual(expectedError);
   });
 });

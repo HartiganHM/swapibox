@@ -64,6 +64,6 @@ describe('People Data Tests', () => {
     const expectedError = Error('Failed to fetch people data');
     const peopleData = await fetchPeople();
 
-    expect(peopleData).toEqual(expectedError)
+    expect(peopleData).toEqual(expectedError);
   });
 });
