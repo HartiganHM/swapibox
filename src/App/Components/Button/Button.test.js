@@ -25,11 +25,11 @@ describe('Button Tests', () => {
     );
   });
 
-  it('Search should exist', () => {
+  it('Should exist', () => {
     expect(renderedButton).toBeDefined();
   });
 
-  it('Search should match the snapshot', () => {
+  it('Should match the snapshot', () => {
     expect(renderedButton).toMatchSnapshot();
   });
 
