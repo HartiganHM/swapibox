@@ -3,6 +3,7 @@ import fetchPlanets from './planetsData';
 
 window.fetch = jest.fn().mockImplementation(() =>
   Promise.resolve({
+    status: 200,
     json: () =>
       Promise.resolve({
         results: [
@@ -52,4 +53,6 @@ describe('Planets Data Tests', () => {
 
     expect(planetsData).toEqual(expectedObject);
   });
+
+
 });
