@@ -54,5 +54,16 @@ describe('Planets Data Tests', () => {
     expect(planetsData).toEqual(expectedObject);
   });
 
+  it('Should throw an error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.reject({
+        status: 500
+      })
+    );
 
+    const expectedError = Error('Failed to fetch planets data');
+    const planetsData = await fetchPlanets();
+
+    expect(planetsData).toEqual(expectedError);
+  });
 });
