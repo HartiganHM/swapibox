@@ -21,6 +21,10 @@
         background-color: $button-hover;
     }
 
+    &:focus {
+        outline: none;
+    }
+
     .category-button-image-people,
     .category-button-image-planets,
     .category-button-image-vehicles {
