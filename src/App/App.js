@@ -22,9 +22,13 @@ class App extends Component {
 
   async componentDidMount() {
     const crawlData = await fetchCrawlData();
-    this.loadCards();
-
     this.setState({ crawlData });
+
+    if (!localStorage.HMHswapibox) {
+      this.loadCards();
+    } else {
+      this.getLocalStorage();
+    }
   }
 
   loadCards = async () => {
@@ -32,6 +36,18 @@ class App extends Component {
     const planets = await fetchPlanets();
     const vehicles = await fetchVehicles();
 
+    this.setState({ people, planets, vehicles }, () =>
+      this.setLocalStorage(this.state)
+    );
+  };
+
+  setLocalStorage = state => {
+    localStorage.setItem('HMHswapibox', JSON.stringify(state));
+  };
+
+  getLocalStorage = () => {
+    const state = JSON.parse(localStorage.getItem('HMHswapibox'));
+    const { people, planets, vehicles } = state;
     this.setState({ people, planets, vehicles });
   };
 
