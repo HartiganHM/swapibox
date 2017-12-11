@@ -8,15 +8,15 @@ const DataBox = ({
   displayData,
   selectData,
   currentDisplay,
-  saveFavorite,
   currentFavorites,
+  saveFavorite,
   removeFavorite,
   favoriteCount
 }) => {
   const buttonArray = ['People', 'Planets', 'Vehicles'].map(type => (
     <Button
       key={type}
-      type='category button'
+      type="category button"
       value={type}
       selectData={selectData}
       currentDisplay={currentDisplay}
@@ -24,15 +24,15 @@ const DataBox = ({
   ));
 
   return (
-    <div className='DataBox'>
+    <div className="DataBox">
       <Button
-        type='favorites button'
-        value='View Favorites'
+        type="favorites button"
+        value="View Favorites"
         favoriteCount={favoriteCount}
         selectData={selectData}
       />
-      <header className='header'>SWAPI-Box</header>
-      <div className='button-box'>{buttonArray}</div>
+      <header className="header"></header>
+      <div className="button-box">{buttonArray}</div>
       <CardContainer
         category={displayData}
         currentDisplay={currentDisplay}
