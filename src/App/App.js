@@ -47,7 +47,7 @@ class App extends Component {
 
   getLocalStorage = () => {
     const state = JSON.parse(localStorage.getItem('HMHswapibox'));
-    const { display, people, planets, vehicles } = state;
+    const { people, planets, vehicles } = state;
     this.setState({ people, planets, vehicles });
   };
 
