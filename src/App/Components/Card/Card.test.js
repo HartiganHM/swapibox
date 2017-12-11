@@ -37,7 +37,7 @@ describe('Card Tests', () => {
     expect(renderedCard).toBeDefined();
   });
 
-  it('Search should match the snapshot', () => {
+  it('Should match the snapshot', () => {
     expect(renderedCard).toMatchSnapshot();
   });
 
