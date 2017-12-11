@@ -49,7 +49,11 @@
 }
 
 .selected {
-    background-color: $background-dark;
+    background-color: $accent-crawl-blue;
+
+    &:hover {
+        background-color: $accent-crawl-blue;
+    }
 }
 
 .favorites {
