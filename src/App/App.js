@@ -41,15 +41,15 @@ class App extends Component {
     );
   };
 
-  setLocalStorage(state) {
+  setLocalStorage = state => {
     localStorage.setItem('HMHswapibox', JSON.stringify(state));
-  }
+  };
 
-  getLocalStorage() {
+  getLocalStorage = () => {
     const state = JSON.parse(localStorage.getItem('HMHswapibox'));
     const { crawlData, display, people, planets, vehicles } = state;
     this.setState({ crawlData, display, people, planets, vehicles });
-  }
+  };
 
   selectData = type => {
     if (type === 'View Favorites') {
