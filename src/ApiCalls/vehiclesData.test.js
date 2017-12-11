@@ -3,11 +3,12 @@ import fetchVehicles from './vehiclesData';
 
 window.fetch = jest.fn().mockImplementation(() =>
   Promise.resolve({
+    status: 200,
     json: () =>
       Promise.resolve({
         results: [
           {
-            name: 'San Crawler',
+            name: 'Sand Crawler',
             model: 'Digger Crawler',
             vehicle_class: 'wheeled',
             passengers: '30'
@@ -41,13 +42,26 @@ describe('Planets Data Tests', () => {
       {
         name: 'Sand Crawler',
         list: {
-            Model: 'Digger Crawler',
-            Class: 'wheeled',
-            Passengers: '30'
+          Model: 'Digger Crawler',
+          Class: 'wheeled',
+          Passengers: '30'
         }
       }
     ];
 
-    expect(planetsData).toEqual(expectedObject);
+    expect(vehiclesData).toEqual(expectedObject);
+  });
+
+  it('Should throw in error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.reject({
+        status: 500
+      })
+    );
+
+    const expectedError = Error('Failed to fetch vehicles data');
+    const vehiclesData = await fetchVehicles();
+
+    expect(vehiclesData).toEqual(expectedError)
   });
 });
