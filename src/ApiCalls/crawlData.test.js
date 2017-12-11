@@ -22,4 +22,17 @@ describe('Crawl Data Tests', () => {
     const crawlData = await fetchCrawlData();
     expect(typeof crawlData).toEqual('object');
   });
+
+  it('Should throw an error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.reject({
+        status: 500
+      })
+    );
+
+    const expectedError = Error('Failed to fetch crawl data');
+    const crawlData = await fetchCrawlData();
+
+    expect(crawlData).toEqual(expectedError)
+  });
 });
