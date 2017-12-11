@@ -52,7 +52,7 @@ describe('Planets Data Tests', () => {
     expect(vehiclesData).toEqual(expectedObject);
   });
 
-  it('Should throw in error if the fetch fails', async () => {
+  it('Should throw an error if the fetch fails', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.reject({
         status: 500
