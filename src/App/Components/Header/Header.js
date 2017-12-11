@@ -15,6 +15,7 @@ const Header = ({ crawlData }) => {
 
   return (
     <div className="Header">
+      <div className='fade'></div>
       <div className="crawl">
         <div className="title">
           <span>Episode {romanNumeral[crawlData.episodeNum]}</span>

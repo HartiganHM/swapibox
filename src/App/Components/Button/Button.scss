@@ -6,19 +6,29 @@
 }
 
 .category {
+    align-items: center;
     background-color: $button-category;
     border: 2px solid $white;
     border-radius: 0.3rem;
     color: $white;
     display: flex;
+    font-size: 1.8rem;
     justify-content: space-around;
+    transition: background-color 0.1s ease;
     width: 15rem;
+
+    &:hover {
+        background-color: $button-hover;
+    }
 
     .category-button-image-people,
     .category-button-image-planets,
     .category-button-image-vehicles {
-        width: 2rem;
-        height: 2rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 3rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     .category-button-image-people {
@@ -42,7 +52,7 @@
     background-color: $white;
     position: absolute;
     top: 4rem;
-    right: 2rem;
+    right: 4rem;
 
     .counter {
         background-color: $background-dark;

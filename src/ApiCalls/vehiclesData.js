@@ -1,9 +1,13 @@
 const fetchVehicles = async () => {
-  const fetchedVehicles = await fetch('https://swapi.co/api/vehicles/');
-  const jsonVehicles = await fetchedVehicles.json();
-  const vehicles = cleanVehicleData(jsonVehicles.results);
+  try {
+    const fetchedVehicles = await fetch('https://swapi.co/api/vehicles/');
+    const jsonVehicles = await fetchedVehicles.json();
+    const vehicles = cleanVehicleData(jsonVehicles.results);
 
-  return vehicles;
+    return vehicles;
+  } catch (error) {
+    return (error = new Error('Failed to fetch vehicles data'));
+  }
 };
 
 const cleanVehicleData = vehicles => {

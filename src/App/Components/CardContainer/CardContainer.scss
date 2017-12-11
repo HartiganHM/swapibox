@@ -9,14 +9,9 @@
     text-align: left;
     padding: $padding-small;
 
-
-    // &:after {
-    //     content: "";
-    //     flex: auto;
-    // }
-
     .placeholder {
         align-self: center;
         font-size: 3.2rem;
+        height: -webkit-fill-available;
     }
 }

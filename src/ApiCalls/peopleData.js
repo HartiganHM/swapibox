@@ -1,9 +1,13 @@
 const fetchPeople = async () => {
-  const fetchedPeople = await fetch('https://swapi.co/api/people/');
-  const jsonData = await fetchedPeople.json();
-  const people = cleanPeopleData(jsonData.results);
+  try {
+    const fetchedPeople = await fetch('https://swapi.co/api/people/');
+    const jsonData = await fetchedPeople.json();
+    const people = cleanPeopleData(jsonData.results);
 
-  return people;
+    return people;
+  } catch (error) {
+    return (error = new Error('Failed to fetch people data'));
+  }
 };
 
 const cleanPeopleData = people => {

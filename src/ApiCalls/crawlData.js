@@ -1,10 +1,14 @@
 const fetchCrawlData = async () => {
-  const key = Math.floor(Math.random() * 7 + 1);
-  const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
-  const jsonData = await fetchedData.json();
-  const crawlData = cleanCrawlData(jsonData);
+  try {
+    const key = Math.floor(Math.random() * 7 + 1);
+    const fetchedData = await fetch(`https://swapi.co/api/films/${key}/`);
+    const jsonData = await fetchedData.json();
+    const crawlData = cleanCrawlData(jsonData);
 
-  return crawlData;
+    return crawlData;
+  } catch (error) {
+    return (error = new Error('Failed to fetch crawl data'));
+  }
 };
 
 const cleanCrawlData = neededData => {
