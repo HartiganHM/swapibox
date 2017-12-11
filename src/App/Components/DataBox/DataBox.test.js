@@ -40,6 +40,6 @@ describe('DataBox Tests', () => {
   });
 
   it('Should have four Button components', () => {
-      expect(renderedDataBox.find('Button').length).toEqual(4);
-  })
+    expect(renderedDataBox.find('Button').length).toEqual(4);
+  });
 });

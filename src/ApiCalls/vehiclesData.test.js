@@ -1,4 +1,3 @@
-import React from 'react';
 import fetchVehicles from './vehiclesData';
 
 window.fetch = jest.fn().mockImplementation(() =>
@@ -10,6 +9,7 @@ window.fetch = jest.fn().mockImplementation(() =>
           {
             name: 'Sand Crawler',
             model: 'Digger Crawler',
+            // eslint-disable-next-line
             vehicle_class: 'wheeled',
             passengers: '30'
           }
@@ -24,7 +24,7 @@ describe('Planets Data Tests', () => {
   });
 
   it('Should be called with the correct parameters', async () => {
-    const vehiclesData = await fetchVehicles();
+    await fetchVehicles();
     const fetchApi = 'https://swapi.co/api/vehicles/';
 
     expect(window.fetch).toHaveBeenCalledWith(fetchApi);

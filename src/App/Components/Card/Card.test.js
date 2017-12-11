@@ -45,7 +45,7 @@ describe('Card Tests', () => {
     expect(renderedCard.find('.card-data-set').length).toEqual(4);
   });
 
-  it('Should have a class of selected-favorite if the card exists in favorites', () => {
+  it('Should have selected-favorite if card exists in favorites', () => {
     mockCurrentFavorites = [mockDisplayData];
     renderedCard = shallow(
       <Card

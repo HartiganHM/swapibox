@@ -35,7 +35,7 @@ describe('Button Tests', () => {
 
   it('Should have a matching image based on the incoming value', () => {
     expect(renderedButton.find('.category-button-image-people').length)
-    .toEqual(1);
+      .toEqual(1);
 
     mockValue = 'Vehicles';
     renderedButton = shallow(<Button value={mockValue} />);

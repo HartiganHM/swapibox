@@ -1,4 +1,3 @@
-import React from 'react';
 import fetchPlanets from './planetsData';
 
 window.fetch = jest.fn().mockImplementation(() =>
@@ -25,7 +24,7 @@ describe('Planets Data Tests', () => {
   });
 
   it('Should be called with the correct parameters', async () => {
-    const planetsData = await fetchPlanets();
+    await fetchPlanets();
     const fetchApi = 'https://swapi.co/api/planets/';
 
     expect(window.fetch).toHaveBeenCalledWith(fetchApi);

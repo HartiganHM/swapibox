@@ -6,7 +6,7 @@ const fetchPeople = async () => {
 
     return people;
   } catch (error) {
-    return (error = new Error('Failed to fetch people data'));
+    return new Error('Failed to fetch people data');
   }
 };
 

@@ -9,12 +9,14 @@ module.exports = {
         ],
         "env": {
           "browser": true,
-          "mocha": true,
+          "jest": true,
           "node": true,
           "es6": true
         },
         // Having a problem with one of these rules? Learn more about it here: https://eslint.org/docs/rules/
         "rules": {
+          "react/jsx-uses-react": "error",
+          "react/jsx-uses-vars": "error",
           "eqeqeq": ["error", "always"],
           "getter-return": ["error", { "allowImplicit": true }],
           "indent": ["warn", 2],

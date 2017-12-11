@@ -1,4 +1,3 @@
-import React from 'react';
 import fetchPeople from './peopleData';
 
 window.fetch = jest.fn().mockImplementation(() =>
@@ -25,7 +24,7 @@ describe('People Data Tests', () => {
   });
 
   it('Should be called with the correct parameters', async () => {
-    const peopleData = await fetchPeople();
+    await fetchPeople();
     const fetchApi = 'https://swapi.co/api/people/';
 
     expect(window.fetch).toHaveBeenCalledWith(fetchApi);
