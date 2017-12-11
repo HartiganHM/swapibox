@@ -53,4 +53,17 @@ describe('People Data Tests', () => {
 
     expect(peopleData).toEqual(expectedObject);
   });
+
+  it('Should throw an error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.reject({
+        status: 500
+      })
+    );
+
+    const expectedError = Error('Failed to fetch people data');
+    const peopleData = await fetchPeople();
+
+    expect(peopleData).toEqual(expectedError)
+  });
 });
