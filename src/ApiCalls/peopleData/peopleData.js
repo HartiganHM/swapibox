@@ -10,10 +10,15 @@ const fetchPeople = async () => {
   }
 };
 
+const fetchHomeworld = async homeworld => {
+  let homeworldFetch = await fetch(homeworld);
+  let homeworldData = await homeworldFetch.json();
+  return homeworldData;
+};
+
 const cleanPeopleData = people => {
   const unresolvedPromises = people.map(async person => {
-    let homeworldFetch = await fetch(person.homeworld);
-    let homeworldData = await homeworldFetch.json();
+    let homeworld = await fetchHomeworld(person.homeworld);
 
     let speciesFetch = await fetch(person.species);
     let speciesData = await speciesFetch.json();
@@ -21,10 +26,10 @@ const cleanPeopleData = people => {
     return {
       name: person.name,
       list: {
-        Homeworld: homeworldData.name,
+        Homeworld: homeworld.name,
         Species: speciesData.name,
         Language: speciesData.language,
-        Population: homeworldData.population
+        Population: homeworld.population
       }
     };
   });
