@@ -2,6 +2,18 @@ import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 
+global.localStorage = {
+  getItem(keyword) {
+    if (!global.localStorage[keyword]) {
+      return null;
+    }
+    return JSON.stringify(global.localStorage[keyword]);
+  },
+  setItem(keyword, value) {
+    global.localStorage[keyword] = value;
+  }
+};
+
 describe('App Tests', () => {
   let renderedApp;
   let mockCard;
