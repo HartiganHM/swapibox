@@ -6,7 +6,7 @@ const fetchVehicles = async () => {
 
     return vehicles;
   } catch (error) {
-    return (error = new Error('Failed to fetch vehicles data'));
+    return new Error('Failed to fetch vehicles data');
   }
 };
 

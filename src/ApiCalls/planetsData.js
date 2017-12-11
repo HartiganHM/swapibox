@@ -6,7 +6,7 @@ const fetchPlanets = async () => {
 
     return planets;
   } catch (error) {
-    return (error = new Error('Failed to fetch planets data'));
+    return new Error('Failed to fetch planets data');
   }
 };
 

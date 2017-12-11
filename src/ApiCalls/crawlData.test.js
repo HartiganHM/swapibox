@@ -1,4 +1,3 @@
-import React from 'react';
 import fetchCrawlData from './crawlData';
 
 window.fetch = jest.fn().mockImplementation(() =>
