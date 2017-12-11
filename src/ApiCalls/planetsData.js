@@ -1,9 +1,13 @@
 const fetchPlanets = async () => {
-  const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
-  const jsonPlanets = await fetchedPlanets.json();
-  const planets = cleanPlanetsData(jsonPlanets.results);
+  try {
+    const fetchedPlanets = await fetch('https://swapi.co/api/planets/');
+    const jsonPlanets = await fetchedPlanets.json();
+    const planets = cleanPlanetsData(jsonPlanets.results);
 
-  return planets;
+    return planets;
+  } catch (error) {
+    return error = new Error('Failed to fetch planets data');
+  }
 };
 
 const cleanPlanetsData = planets => {
