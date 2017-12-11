@@ -15,6 +15,8 @@ module.exports = {
         },
         // Having a problem with one of these rules? Learn more about it here: https://eslint.org/docs/rules/
         "rules": {
+          "react/jsx-uses-react": "error",
+          "react/jsx-uses-vars": "error",
           "eqeqeq": ["error", "always"],
           "getter-return": ["error", { "allowImplicit": true }],
           "indent": ["warn", 2],
