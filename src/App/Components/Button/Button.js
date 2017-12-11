@@ -7,7 +7,7 @@ const Button = ({ type, value, selectData, currentDisplay, favoriteCount }) => {
     value.toLowerCase() === currentDisplay ? `${type} selected` : type;
   const buttonImageClass = 'category-button-image-' + value.toLowerCase();
   const buttonImage = <div className={buttonImageClass}></div>;
-  const counter = <span className='counter'>{favoriteCount}</span>
+  const counter = <span className='counter'>{favoriteCount}</span>;
 
   return (
     <button className={buttonClass} onClick={() => selectData(value)}>
