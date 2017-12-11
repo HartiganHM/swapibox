@@ -4,14 +4,23 @@ import { shallow } from 'enzyme';
 
 describe('Button Tests', () => {
   let renderedButton;
+  let mockType;
+  let mockValue;
+  let mockSelectData;
+  let mockCurrentDisplay;
 
   beforeEach(() => {
+    mockType = 'category button';
+    mockValue = 'People';
+    mockSelectData = jest.fn();
+    mockCurrentDisplay = '';
+
     renderedButton = shallow(
       <Button
-        type="category button"
-        value="People"
-        selectData={jest.fn()}
-        currentDisplay="People"
+        type={mockType}
+        value={mockValue}
+        selectData={mockSelectData}
+        currentDisplay={mockCurrentDisplay}
       />
     );
   });
@@ -25,22 +34,26 @@ describe('Button Tests', () => {
   });
 
   it('Should have a matching image based on the incoming value', () => {
-      expect(renderedButton.find('.category-button-image-people').length).toEqual(1);
+    expect(renderedButton.find('.category-button-image-people').length)
+    .toEqual(1);
+
+    mockValue = 'Vehicles';
+    renderedButton = shallow(<Button value={mockValue} />);
+
+    expect(
+      renderedButton.find('.category-button-image-vehicles').length)
+      .toEqual(1);
   });
 
-  it('Should have a counter if the incoming value is View Facorites', () => {
-    renderedButton = shallow(
-        <Button
-          type="favorites button"
-          value="View Favorites"
-          selectData={jest.fn()}
-          currentDisplay="People"
-        />)
-    expect(renderedButton.find('.counter').length).toEqual(1)
+  it('Should have a counter if the incoming value is View Favorites', () => {
+    mockValue = 'View Favorites';
+    renderedButton = shallow(<Button value={mockValue} />);
+
+    expect(renderedButton.find('.counter').length).toEqual(1);
   });
 
   it('selectData should send the value up when clicked', () => {
-      renderedButton.simulate('click')
-      expect(renderedButton.selectData()).toHaveBeenCalledWith(renderedButton.value)
-  })
+    renderedButton.simulate('click');
+    expect(mockSelectData).toHaveBeenCalledWith(mockValue);
+  });
 });

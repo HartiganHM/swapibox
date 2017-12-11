@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Button
-    currentDisplay="People"
+    currentDisplay=""
     selectData={[Function]}
     type="category button"
     value="People"
