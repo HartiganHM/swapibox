@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Tests Should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header
+    crawlData={
+        Object {
+            "episodeNum": 7,
+            "episodeTitle": "Star Trek N Stuff",
+            "openingCrawl": "Me crawl!",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="fade"
+/>,
+        <div
+          className="crawl"
+>
+          <div
+                    className="title"
+          >
+                    <span>
+                              Episode 
+                              VII
+                    </span>
+                    <span>
+                              Star Trek N Stuff
+                    </span>
+          </div>
+          <p>
+                    Me crawl!
+          </p>
+</div>,
+      ],
+      "className": "Header",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fade",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="title"
+>
+              <span>
+                            Episode 
+                            VII
+              </span>
+              <span>
+                            Star Trek N Stuff
+              </span>
+</div>,
+            <p>
+              Me crawl!
+</p>,
+          ],
+          "className": "crawl",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span>
+                  Episode 
+                  VII
+</span>,
+                <span>
+                  Star Trek N Stuff
+</span>,
+              ],
+              "className": "title",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Episode ",
+                    "VII",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Episode ",
+                  "VII",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Star Trek N Stuff",
+                },
+                "ref": null,
+                "rendered": "Star Trek N Stuff",
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Me crawl!",
+            },
+            "ref": null,
+            "rendered": "Me crawl!",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="fade"
+/>,
+          <div
+            className="crawl"
+>
+            <div
+                        className="title"
+            >
+                        <span>
+                                    Episode 
+                                    VII
+                        </span>
+                        <span>
+                                    Star Trek N Stuff
+                        </span>
+            </div>
+            <p>
+                        Me crawl!
+            </p>
+</div>,
+        ],
+        "className": "Header",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fade",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title"
+>
+                <span>
+                                Episode 
+                                VII
+                </span>
+                <span>
+                                Star Trek N Stuff
+                </span>
+</div>,
+              <p>
+                Me crawl!
+</p>,
+            ],
+            "className": "crawl",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span>
+                    Episode 
+                    VII
+</span>,
+                  <span>
+                    Star Trek N Stuff
+</span>,
+                ],
+                "className": "title",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Episode ",
+                      "VII",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Episode ",
+                    "VII",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Star Trek N Stuff",
+                  },
+                  "ref": null,
+                  "rendered": "Star Trek N Stuff",
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Me crawl!",
+              },
+              "ref": null,
+              "rendered": "Me crawl!",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
