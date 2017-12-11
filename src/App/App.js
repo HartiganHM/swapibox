@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import fetchCrawlData from '../ApiCalls/crawlData';
-import fetchPeople from '../ApiCalls/peopleData';
-import fetchPlanets from '../ApiCalls/planetsData';
-import fetchVehicles from '../ApiCalls/vehiclesData';
+import fetchCrawlData from '../ApiCalls/crawlData/crawlData';
+import fetchPeople from '../ApiCalls/peopleData/peopleData';
+import fetchPlanets from '../ApiCalls/planetsData/planetsData';
+import fetchVehicles from '../ApiCalls/vehiclesData/vehiclesData';
 import Header from './Components/Header/Header';
 import DataBox from './Components/DataBox/DataBox';
 import './App.css';

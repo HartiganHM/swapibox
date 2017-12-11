@@ -12,14 +12,11 @@ const fetchCrawlData = async () => {
 };
 
 const cleanCrawlData = neededData => {
-  return Object.assign(
-    {},
-    {
-      episodeNum: neededData.episode_id,
-      episodeTitle: neededData.title,
-      openingCrawl: neededData.opening_crawl
-    }
-  );
+  return {
+    episodeNum: neededData.episode_id,
+    episodeTitle: neededData.title,
+    openingCrawl: neededData.opening_crawl
+  };
 };
 
 export default fetchCrawlData;
