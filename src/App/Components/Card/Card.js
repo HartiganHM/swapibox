@@ -8,7 +8,7 @@ const Card = ({
   saveFavorite,
   removeFavorite
 }) => {
-  const type = Object.values(currentFavorites).find(card =>
+  const type = currentFavorites.find(card =>
     card === displayData)
     ? 'Card selected-favorite'
     : 'Card';
