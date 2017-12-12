@@ -71,9 +71,9 @@ class App extends Component {
   };
 
   removeFavorite = selectedCard => {
-    const favorites = this.state.favorites.filter(card => {
-      return card.name !== selectedCard.name;
-    });
+    const favorites = this.state.favorites.filter(
+      card => card.name !== selectedCard.name
+    );
 
     this.setState({ favorites });
   };
