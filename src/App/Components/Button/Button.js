@@ -11,7 +11,7 @@ const Button = ({ type, value, selectData, currentDisplay, favoriteCount }) => {
 
   return (
     <button className={buttonClass} onClick={() => selectData(value)}>
-      {value}{' '}
+      {value}
       {value === 'View Favorites' ? counter : buttonImage}
     </button>
   );

@@ -8,14 +8,17 @@ const Card = ({
   saveFavorite,
   removeFavorite
 }) => {
-  const type = Object.values(currentFavorites).find(card =>
+  const type = currentFavorites.find(card =>
     card === displayData)
     ? 'Card selected-favorite'
     : 'Card';
+
   const favorited =
     type === 'Card' ? 'mark-favorite' : 'mark-favorite current-favorite';
+
   const clickFunction =
     type === 'Card' ? saveFavorite : removeFavorite;
+
   const dataPoints = Object.keys(displayData.list).map(dataPoint => (
     <li key={dataPoint} className="card-data-set">
       <span className="data-key">{dataPoint}</span>:{' '}
